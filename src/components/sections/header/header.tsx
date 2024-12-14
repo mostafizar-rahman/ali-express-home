@@ -1,66 +1,9 @@
 import { Link } from "react-router-dom"
 import CategoryMenu from "./categoryMenu"
-import { ChevronDown, QrCode } from "lucide-react"
-import { AlQrCode } from "@/lib/icon"
+import { ChevronDown } from "lucide-react"
 import TopHeader from "./topHeader"
+import { menuList } from "@/db/menuList"
 
-const menuList = [
-    {
-        "url": "",
-        "name": "SuperDeals"
-    },
-    {
-        "url": "",
-        "name": "plus"
-    },
-    {
-        "url": "",
-        "name": "new"
-    },
-    {
-        "url": "",
-        "name": "aliexpress Business"
-    },
-    {
-        "url": "",
-        "name": "shoes"
-    },
-    {
-        "url": "",
-        "name": "soprts & entertetment"
-    },
-    {
-        "url": "",
-        "name": "home & garden"
-    },
-    {
-        "url": "",
-        "name": "Hair Extensions & Wigs"
-    },
-    {
-        "url": "",
-        "name": "Men's Clothing"
-    },
-    {
-        "url": "",
-        "name": "more",
-        "dropdown": [
-            {
-                "url": "",
-                "name": "Accessories"
-            },
-            {
-                "url": "",
-                "name": "Consumer Electronics"
-            },
-            {
-                "url": "",
-                "name": "Home Improvement & Lighting"
-            },
-        ]
-    },
-
-]
 const Header = () => {
     return (
         <header className="container ">
@@ -74,14 +17,14 @@ const Header = () => {
                         {
                             menuList.map((item) => {
                                 return (
-                                    <li className="relative">
-                                        <Link to={item.url || "#"} className="capitalize text-[#191919] px-4 py-2 rounded-full whitespace-nowrap flex items-center gap-1 hover:bg-slate-100 transition-all">
+                                    <li className="relative group">
+                                        <Link to={item.url || "#"} className="capitalize  px-4 py-2 rounded-full whitespace-nowrap flex items-center gap-1 hover:bg-slate-100 transition-all">
                                             {item.name}
                                             {item.dropdown && <span><ChevronDown size={14} /></span>}
                                         </Link>
                                         {
                                             item.dropdown &&
-                                            <ul className="absolute right-0 min-w-max bg-white py-3 px-4 rounded-3xl shadow-[0_2px_8px_0_rgba(0,0,0,.2)]">
+                                            <ul className="absolute right-0 min-w-max bg-white py-3 px-4 rounded-3xl shadow-[0_2px_8px_0_rgba(0,0,0,.2)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500">
                                                 {
                                                     item.dropdown?.map((drop) => {
                                                         return (

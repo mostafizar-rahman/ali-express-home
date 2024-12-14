@@ -55,7 +55,7 @@ const TopHeader = () => {
             <div className="flex items-center gap-5 pl-8 shrink-0">
                 <div className="flex items-center gap-1.5">
                     <span><QrCode /></span>
-                    <p className="max-w-[90px] text-xs font-medium text-[#191919]">Download the AliExpress app</p>
+                    <p className="max-w-[90px] text-xs font-medium ">Download the AliExpress app</p>
                 </div>
 
                 {/* start design country/Language/Currency */}
@@ -63,14 +63,14 @@ const TopHeader = () => {
                     <div className="flex items-center gap-1 cursor-pointer" onClick={() => { handleCountries(), setShowCountryPopup(!showCountryPopup) }}>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg" alt="flag" className="w-6 h-4" />
                         <div>
-                            <span className="text-xs leading-3 text-[#191919] block">En /</span>
+                            <span className="text-xs leading-3  block">En /</span>
                             <span className="font-bold text-xs leading-4 block">USD</span>
                         </div>
                     </div>
                     <div className={`${showCountryPopup ? "block" : "hidden"} p-6 bg-white shadow-[0_2px_8px_0_rgba(0,0,0,.2)] rounded-3xl w-[300px] absolute -right-9 top-10 z-30`}>
                         <div className="bg-white w-4 h-4 rotate-45 absolute -top-2 right-10"></div>
                         <div>
-                            <p className="leading-6 font-bold text-xl text-[#191919] mb-2">Ship to</p>
+                            <p className="leading-6 font-bold text-xl  mb-2">Ship to</p>
                             <Select value={selectCountry} onValueChange={value => setSelectCountry(value)}>
                                 <SelectTrigger className="rounded-md border-[rgba(0,0,0,.2)] focus:border-[rgba(0,0,0,.2)] focus:ring-0 h-10">
                                     <div className='flex items-center gap-2'>
@@ -102,7 +102,7 @@ const TopHeader = () => {
                             </Select>
                         </div>
                         <div className="mt-4">
-                            <p className="leading-6 font-bold text-xl text-[#191919] mb-2">Language</p>
+                            <p className="leading-6 font-bold text-xl  mb-2">Language</p>
                             <Select>
                                 <SelectTrigger className="rounded-md border-[rgba(0,0,0,.2)] focus:border-[rgba(0,0,0,.2)] focus:ring-0 h-10">
                                     <SelectValue placeholder="English" />
@@ -120,7 +120,7 @@ const TopHeader = () => {
                             </Select>
                         </div>
                         <div className="mt-4">
-                            <p className="leading-6 font-bold text-xl text-[#191919] mb-2">Currency</p>
+                            <p className="leading-6 font-bold text-xl  mb-2">Currency</p>
                             <Select>
                                 <SelectTrigger className="rounded-md border-[rgba(0,0,0,.2)] focus:border-[rgba(0,0,0,.2)] focus:ring-0 h-10">
                                     <SelectValue placeholder="(BDT) Bangladeshi Taka" />
@@ -144,15 +144,17 @@ const TopHeader = () => {
                 </div>
                 {/* end design country/Language/Currency */}
 
-                <div className="relative">
+                {/* start login/register */}
+                <div className="relative group/sign">
                     <div className="flex items-center gap-1 cursor-pointer">
                         <span><AlUser className="size-8" /></span>
                         <div>
-                            <small className="leading-3 text-xs block text-[#191919]">Welcome</small>
-                            <span className="leading-4 text-xs block font-bold text-[#191919]">Sign in / Register</span>
+                            <small className="leading-3 text-xs block ">Welcome</small>
+                            <span className="leading-4 text-xs block font-bold ">Sign in / Register</span>
                         </div>
                     </div>
-                    <div className=" py-6 px-2 bg-white shadow-[0_2px_8px_0_rgba(0,0,0,.2)] rounded-3xl w-[300px] absolute z-30">
+                    <div className=" py-6 px-2 bg-white shadow-[0_2px_8px_0_rgba(0,0,0,.2)] rounded-3xl w-[300px] absolute left-1/2 -translate-x-1/2 z-30 top-10 opacity-0 invisible group-hover/sign:opacity-100 group-hover/sign:visible transition-all duration-300">
+                        <div className="bg-white w-4 h-4 rotate-45 absolute -top-2 left-1/2 -translate-x-1/2"></div>
                         <div className="px-4">
                             <Link to={"#"} className="bg-[#191919] text-xl font-bold text-white rounded-3xl flex justify-center items-center text-center h-12">Sing in</Link>
                             <p className="text-center">
@@ -191,12 +193,13 @@ const TopHeader = () => {
                         </ul>
                     </div>
                 </div>
+                {/* end login/register */}
 
                 <div className="flex items-center gap-1 cursor-pointer">
-                    <span className="text-[#191919]"><AlShopCart className="size-8" /></span>
+                    <span className=""><AlShopCart className="size-8" /></span>
                     <div className="">
                         <span className="bg-[#191919] text-white w-6 h-[14px] flex items-center justify-center text-xs font-bold rounded-2xl">0</span>
-                        <b className="font-bold text-xs text-[#191919] leading-4 block">Cart</b>
+                        <b className="font-bold text-xs  leading-4 block">Cart</b>
                     </div>
                 </div>
             </div>
