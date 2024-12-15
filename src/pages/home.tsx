@@ -1,13 +1,24 @@
+import Ads from "@/components/sections/ads"
+import TodayDeals from "@/components/sections/todayDeals"
+import TodayDealsSecondPart from "@/components/sections/todayDealsSecondPart"
 import Card from "@/components/ui/card"
 
 const Home = () => {
 
     return (
         <>
-            <div className="bg-[rgb(10,128,56)] h-80">
-
-            </div>
-            <div className="mt-20 container grid grid-cols-6 gap-4">
+            <Ads />
+            <TodayDeals/>
+            <TodayDealsSecondPart/>
+            <div className="mt-20 container flex flex-wrap">
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
                 <Card />
                 <Card />
                 <Card />

@@ -53,9 +53,32 @@ const TopHeader = () => {
             </div>
 
             <div className="flex items-center gap-5 pl-8 shrink-0">
-                <div className="flex items-center gap-1.5">
-                    <span><QrCode /></span>
-                    <p className="max-w-[90px] text-xs font-medium ">Download the AliExpress app</p>
+                <div className="relative group/app">
+                    <div className="flex items-center gap-1.5 cursor-pointer">
+                        <span><QrCode /></span>
+                        <p className="max-w-[90px] text-xs font-medium ">Download the AliExpress app</p>
+                    </div>
+
+                    <div className="absolute z-20 top-full left-0 mt-2 w-[28rem] bg-white shadow-lg rounded-md p-4 transform scale-0 group-hover/app:scale-100 transition-transform duration-300 origin-top-left">
+                        <div className="flex items-center space-x-4"><div>
+                            <img src="/images/qr-code.webp" alt="QR Code" className="w-[8rem] h-[8rem]" />
+                        </div>
+                            <div>
+                                <p className="text-lg font-semibold text-black">Download the AliExpress app</p>
+                                <p className="text-sm text-gray-500">Scan the QR code to download</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center space-x-2 mt-4">
+                            <a href="#" className="w-full flex justify-center items-center bg-black text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-800">
+                                <img src="/images/playstore.webp" alt="Bangladesh Flag" className="w-[2rem] h-[2rem] mr-3" />
+                                App Store
+                            </a>
+                            <a href="#" className="w-full flex justify-center items-center bg-black text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-800">
+                                <img src="/images/apple-logo.webp" alt="Bangladesh Flag" className="w-[2rem] h-[2rem] mr-3" />
+                                Google Play
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 {/* start design country/Language/Currency */}
