@@ -40,7 +40,7 @@ const TopHeader = () => {
     return (
         <div className="flex justify-between py-5">
             <Link to={"/"} className="shrink-0">
-                <img src="/public/images/logo.avif" alt="logo" className="w-[156px]" />
+                <img src="/images/logo.avif" alt="logo" className="w-[156px]" />
             </Link>
             <div className="w-full pl-11 relative">
                 <input type="text" placeholder="search product" className="h-9 border border-black rounded-3xl w-full pl-6 py-2 text-sm outline-none" />
