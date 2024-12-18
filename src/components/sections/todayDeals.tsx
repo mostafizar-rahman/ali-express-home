@@ -10,7 +10,7 @@ const TodayDeals = () => {
     <section className="container pt-8">
       <h2 className="text-center font-bold text-[32px]">Today's deals</h2>
       <div className="grid grid-cols-2 gap-[35px] mt-6">
-        <div className="relative bg-[url('https://ae01.alicdn.com/kf/S750461e03a75471cac965e67d7d557229.jpg')] bg-cover bg-no-repeat group/super">
+        <div className="relative bg-[url('https://ae01.alicdn.com/kf/S750461e03a75471cac965e67d7d557229.jpg')] bg-cover bg-no-repeat group/super rounded-xl">
           <div className="pt-6 flex flex-col items-center">
             <h6 className="text-2xl font-bold leading-[31px] text-center text-white">SuperDeals</h6>
             <div className="px-3 py-1.5 bg-white rounded-[20px] inline-flex items-center gap-2 mt-2 font-medium">
@@ -47,7 +47,7 @@ const TodayDeals = () => {
           </div>
         </div>
 
-        <div className="relative bg-[url('https://ae01.alicdn.com/kf/Sc8908a992f6341cda52c8b6ac2d302efG.jpg')] bg-cover bg-no-repeat group/big">
+        <div className="relative bg-[url('https://ae01.alicdn.com/kf/Sc8908a992f6341cda52c8b6ac2d302efG.jpg')] bg-cover bg-no-repeat group/big rounded-xl">
           <div className="pt-6 flex flex-col items-center">
             <h6 className="text-2xl font-bold leading-[31px] text-center text-white">Big Save</h6>
             <div className="px-3 py-1.5 bg-white rounded-[20px] inline-flex items-center gap-2 mt-2 font-medium relative overflow-hidden">
@@ -105,15 +105,15 @@ interface CardPropsType {
 }
 const Card = ({ discountPercentage, price, thumbnail, title, discountPercentageShow }: CardPropsType) => {
   return (
-    <div className="p-2 bg-background">
+    <div className="p-2 bg-background rounded-lg">
       <Link to={"#"}>
-        <img src={thumbnail} alt="img" />
+        <img src={thumbnail} alt="img" className="rounded-md"/>
       </Link>
       <div className="mt-3">
         <Link to={"#"} className="line-clamp-2 font-[450] leading-5">{title}</Link>
         <div className="mt-4">
-          <p className="font-bold text-xl inline-block leading-none mr-2">US ${price}</p>
-          <p className="line-through text-[#979797] inline-block leading-none text-base">US $37.29</p>
+          <p className="font-bold min-[1551px]:text-xl inline-block leading-none mr-2">US ${price}</p>
+          <p className="line-through text-[#979797] inline-block leading-none min-[1551px]:text-base text-xs">US $37.29</p>
         </div>
         {
           discountPercentageShow ?

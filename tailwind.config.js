@@ -9,6 +9,7 @@ export default {
 			// 'xl':"1134px",
 			// 'xl':"1264px",
 			// '2xl': '1616px'
+			// 'min-1551': '1551px',
 		}
 	},
   	extend: {
