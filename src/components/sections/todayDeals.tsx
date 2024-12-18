@@ -10,7 +10,7 @@ const TodayDeals = () => {
     <section className="container pt-8">
       <h2 className="text-center font-bold text-[32px]">Today's deals</h2>
       <div className="grid grid-cols-2 gap-[35px] mt-6">
-        <div className="relative bg-[url('https://ae01.alicdn.com/kf/S750461e03a75471cac965e67d7d557229.jpg')] bg-cover bg-no-repeat">
+        <div className="relative bg-[url('https://ae01.alicdn.com/kf/S750461e03a75471cac965e67d7d557229.jpg')] bg-cover bg-no-repeat group/super">
           <div className="pt-6 flex flex-col items-center">
             <h6 className="text-2xl font-bold leading-[31px] text-center text-white">SuperDeals</h6>
             <div className="px-3 py-1.5 bg-white rounded-[20px] inline-flex items-center gap-2 mt-2 font-medium">
@@ -41,13 +41,13 @@ const TodayDeals = () => {
               }
             </Swiper>
           </div>
-          <div className="absolute top-1/2 -translate-y-1/2 z-50 w-full">
+          <div className="absolute top-1/2 -translate-y-1/2 z-50 w-full opacity-0 group-hover/super:opacity-100 transition-all duration-300">
             <div className="prev-el w-[60px] h-[60px] flex items-center justify-center bg-[rgba(0,0,0,.25)] cursor-pointer text-white absolute left-0"><ChevronLeft size={30} /></div>
             <div className="next-el w-[60px] h-[60px] flex items-center justify-center bg-[rgba(0,0,0,.25)] cursor-pointer text-white absolute right-0"><ChevronRight size={30} /></div>
           </div>
         </div>
 
-        <div className="relative bg-[url('https://ae01.alicdn.com/kf/Sc8908a992f6341cda52c8b6ac2d302efG.jpg')] bg-cover bg-no-repeat">
+        <div className="relative bg-[url('https://ae01.alicdn.com/kf/Sc8908a992f6341cda52c8b6ac2d302efG.jpg')] bg-cover bg-no-repeat group/big">
           <div className="pt-6 flex flex-col items-center">
             <h6 className="text-2xl font-bold leading-[31px] text-center text-white">Big Save</h6>
             <div className="px-3 py-1.5 bg-white rounded-[20px] inline-flex items-center gap-2 mt-2 font-medium relative overflow-hidden">
@@ -82,7 +82,7 @@ const TodayDeals = () => {
               }
             </Swiper>
           </div>
-          <div className="absolute top-1/2 -translate-y-1/2 z-50 w-full">
+          <div className="absolute top-1/2 -translate-y-1/2 z-50 w-full opacity-0 group-hover/big:opacity-100 transition-all duration-300">
             <div className="prev-el w-[60px] h-[60px] flex items-center justify-center bg-[rgba(0,0,0,.25)] cursor-pointer text-white absolute left-0"><ChevronLeft size={30} /></div>
             <div className="next-el w-[60px] h-[60px] flex items-center justify-center bg-[rgba(0,0,0,.25)] cursor-pointer text-white absolute right-0"><ChevronRight size={30} /></div>
           </div>
