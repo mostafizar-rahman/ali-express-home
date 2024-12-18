@@ -64,9 +64,38 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'TT Norms Pro', sans-serif;
+    font-family: "TT Norms Pro", sans-serif;
     font-feature-settings: "tnum", "tnum";
-                                                
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (min-width: 1792px) {
+  .container {
+    width: 1616px;
+  }
+}
+
+@media screen and (min-width: 1552px) and (max-width: 1791px) {
+  .container {
+    width: 1376px;
+  }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1551px) {
+  .container {
+    width: 1264px;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+  .container {
+    width: 1104px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .container {
+    min-width: 1200px;
+    padding: 0 50px;
   }
 }
 

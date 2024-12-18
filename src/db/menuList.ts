@@ -1,54 +1,54 @@
 export const menuList = [
     {
-        "url": "",
+        "url": "#",
         "name": "SuperDeals"
     },
     {
-        "url": "",
+        "url": "#",
         "name": "plus"
     },
     {
-        "url": "",
+        "url": "#",
         "name": "new"
     },
     {
-        "url": "",
+        "url": "#",
         "name": "aliexpress Business"
     },
     {
-        "url": "",
+        "url": "#",
         "name": "shoes"
     },
     {
-        "url": "",
+        "url": "#",
         "name": "soprts & entertetment"
     },
     {
-        "url": "",
+        "url": "#",
         "name": "home & garden"
     },
     {
-        "url": "",
+        "url": "#",
         "name": "Hair Extensions & Wigs"
     },
     {
-        "url": "",
+        "url": "#",
         "name": "Men's Clothing"
     },
     {
-        "url": "",
+        "url": "#",
         "name": "more",
         "dropdown": [
             {
-                "url": "",
+                "url": "#",
                 "name": "Accessories"
             },
             {
-                "url": "",
+                "url": "#",
                 "name": "Consumer Electronics"
             },
             {
-                "url": "",
+                "url": "#",
                 "name": "Home Improvement & Lighting"
             },
         ]

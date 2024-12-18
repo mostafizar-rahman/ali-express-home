@@ -7,8 +7,8 @@ export default {
 		center: true,
 		screens: {
 			// 'xl':"1134px",
-			'xl':"1264px",
-			'2xl': '1616px'
+			// 'xl':"1264px",
+			// '2xl': '1616px'
 		}
 	},
   	extend: {

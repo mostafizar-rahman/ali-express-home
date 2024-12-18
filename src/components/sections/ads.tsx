@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const Ads = () => {
     return (
-        <section className="bg-[rgb(10,128,56)] pt-8 pb-12">
+        <section className="bg-[rgb(10,128,56)] min-w-[1200px] pt-8 pb-12">
             <div className="container bg-[url('/images/ads.png')] bg-no-repeat bg-contain bg-right">
                 <div className="text-xl font-bold">
                     <span className="text-white ">Sale Ends in:</span>

@@ -1,4 +1,5 @@
 import Ads from "@/components/sections/ads"
+import FooterCategory from "@/components/sections/footerCategory"
 import HomeCategory from "@/components/sections/homeCategory"
 import HomeProducts from "@/components/sections/homeProducts"
 import TodayDeals from "@/components/sections/todayDeals"
@@ -13,6 +14,7 @@ const Home = () => {
             <TodayDealsSecondPart />
             <HomeCategory />
             <HomeProducts />
+            <FooterCategory/>
         </>
     )
 }

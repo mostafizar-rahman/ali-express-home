@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { EffectFade, Navigation } from "swiper/modules";
+import { homeCategoryData } from "@/db/homeCategoryData";
 
 const HomeCategory = () => {
     return (
@@ -29,63 +30,36 @@ const HomeCategory = () => {
                 </div>
                 <div>
                     <Swiper
-                    // slidesPerView={2}
-                    className="group"
-                    navigation={{
-                        nextEl:".next-el",
-                        prevEl:".prev-el"
-                    }}
-                    effect="fade"
-                    loop
-                    modules={[Navigation, EffectFade]}
+                        // slidesPerView={2}
+                        className="group"
+                        navigation={{
+                            nextEl: ".next-el",
+                            prevEl: ".prev-el"
+                        }}
+                        effect="fade"
+                        loop
+                        modules={[Navigation, EffectFade]}
                     >
-                        {/* {
 
-                        } */}
-                        <SwiperSlide>
-                            <div className="grid grid-cols-2 gap-6">
-                                <Link to={"#"} className="block h-[213px] max-w-[384px] bg-cover bg-[url('https://ae01.alicdn.com/kf/S2acb8266b0e74c60821240d4d31ee80fd.png')]">
-                                    <span className="p-6 font-semibold text-2xl max-w-[135px] block">Pet Supplies</span>
-                                </Link>
-                                <Link to={"#"} className="block h-[213px] max-w-[384px] bg-cover bg-[url('https://ae01.alicdn.com/kf/S2acb8266b0e74c60821240d4d31ee80fd.png')]">
-                                    <span className="p-6 font-semibold text-2xl max-w-[135px] block">Pet Supplies</span>
-                                </Link>
-                                <Link to={"#"} className="block h-[213px] max-w-[384px] bg-cover bg-[url('https://ae01.alicdn.com/kf/S2acb8266b0e74c60821240d4d31ee80fd.png')]">
-                                    <span className="p-6 font-semibold text-2xl max-w-[135px] block">Pet Supplies</span>
-                                </Link>
-                                <Link to={"#"} className="block h-[213px] max-w-[384px] bg-cover bg-[url('https://ae01.alicdn.com/kf/S2acb8266b0e74c60821240d4d31ee80fd.png')]">
-                                    <span className="p-6 font-semibold text-2xl max-w-[135px] block">Pet Supplies</span>
-                                </Link>
-                                <Link to={"#"} className="block h-[213px] max-w-[384px] bg-cover bg-[url('https://ae01.alicdn.com/kf/S2acb8266b0e74c60821240d4d31ee80fd.png')]">
-                                    <span className="p-6 font-semibold text-2xl max-w-[135px] block">Pet Supplies</span>
-                                </Link>
-                                <Link to={"#"} className="block h-[213px] max-w-[384px] bg-cover bg-[url('https://ae01.alicdn.com/kf/S2acb8266b0e74c60821240d4d31ee80fd.png')]">
-                                    <span className="p-6 font-semibold text-2xl max-w-[135px] block">Pet Supplies</span>
-                                </Link>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="grid grid-cols-2 gap-6">
-                                <Link to={"#"} className="block h-[213px] max-w-[384px] bg-cover bg-[url('https://ae01.alicdn.com/kf/S321d687c38e749c78bf783eb4a37fc2bC.png')]">
-                                    <span className="p-6 font-semibold text-2xl max-w-[135px] block">Pet Supplies</span>
-                                </Link>
-                                <Link to={"#"} className="block h-[213px] max-w-[384px] bg-cover bg-[url('https://ae01.alicdn.com/kf/S2acb8266b0e74c60821240d4d31ee80fd.png')]">
-                                    <span className="p-6 font-semibold text-2xl max-w-[135px] block">Pet Supplies</span>
-                                </Link>
-                                <Link to={"#"} className="block h-[213px] max-w-[384px] bg-cover bg-[url('https://ae01.alicdn.com/kf/S2acb8266b0e74c60821240d4d31ee80fd.png')]">
-                                    <span className="p-6 font-semibold text-2xl max-w-[135px] block">Pet Supplies</span>
-                                </Link>
-                                <Link to={"#"} className="block h-[213px] max-w-[384px] bg-cover bg-[url('https://ae01.alicdn.com/kf/S2acb8266b0e74c60821240d4d31ee80fd.png')]">
-                                    <span className="p-6 font-semibold text-2xl max-w-[135px] block">Pet Supplies</span>
-                                </Link>
-                                <Link to={"#"} className="block h-[213px] max-w-[384px] bg-cover bg-[url('https://ae01.alicdn.com/kf/S2acb8266b0e74c60821240d4d31ee80fd.png')]">
-                                    <span className="p-6 font-semibold text-2xl max-w-[135px] block">Pet Supplies</span>
-                                </Link>
-                                <Link to={"#"} className="block h-[213px] max-w-[384px] bg-cover bg-[url('https://ae01.alicdn.com/kf/S2acb8266b0e74c60821240d4d31ee80fd.png')]">
-                                    <span className="p-6 font-semibold text-2xl max-w-[135px] block">Pet Supplies</span>
-                                </Link>
-                            </div>
-                        </SwiperSlide>
+                        {
+                            homeCategoryData.map(({ categories, id }) => {
+                                return (
+                                    <SwiperSlide>
+                                        <div key={id} className="grid grid-cols-2 gap-6">
+                                            {
+                                                categories.map(({ id, image, title }) => {
+                                                    return (
+                                                        <Link key={id} to={"#"} className="block h-[213px] max-w-[384px] bg-cover" style={{ backgroundImage: `url(${image})` }}>
+                                                            <span className="p-6 font-semibold text-2xl max-w-[135px] block">{title}</span>
+                                                        </Link>
+                                                    )
+                                                })
+                                            }
+                                        </div>
+                                    </SwiperSlide>
+                                )
+                            })
+                        }
 
                         <div className="absolute top-1/2 -translate-y-1/2 z-50 w-full opacity-0 group-hover:opacity-100 transition-all duration-300">
                             <div className="prev-el w-[60px] h-[60px] flex items-center justify-center bg-[rgba(0,0,0,.25)] cursor-pointer text-white absolute left-0"><ChevronLeft size={30} /></div>
@@ -107,7 +81,7 @@ const ProductCard = () => {
             <div className="relative">
                 <div className="bg-[rgba(0,0,0,.03137254901960784)] w-full h-[272px] absolute"></div>
                 <Link to={"#"} className="max-w-[205px] max-h-[272px] block">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S918a09297ea7447cad07a57e15ab05d3n.jpg_480x480.jpg_.webp" alt="" />
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S696092beee15461387d080cd374f03918.jpg_480x480.jpg_.webp" alt="" />
                 </Link>
             </div>
             <div className="mt-3">
