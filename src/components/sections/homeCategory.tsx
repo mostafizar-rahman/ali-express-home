@@ -9,7 +9,7 @@ import { homeCategoryData } from "@/db/homeCategoryData";
 
 const HomeCategory = () => {
     return (
-        <section className="container pt-8">
+        <section className="container mt-8">
             <h2 className="text-center font-bold text-[32px]">Shop by category</h2>
             <div className="grid grid-cols-2 gap-[35px] mt-6">
                 <div className="bg-[#1B5F48] min-[1551px]:h-[687px] h-[536px] flex flex-col justify-between">

@@ -7,7 +7,7 @@ import { Navigation } from "swiper/modules";
 
 const TodayDeals = () => {
   return (
-    <section className="container pt-8">
+    <section className="container mt-8">
       <h2 className="text-center font-bold text-[32px]">Today's deals</h2>
       <div className="grid grid-cols-2 gap-[35px] mt-6">
         <div className="relative bg-[url('https://ae01.alicdn.com/kf/S750461e03a75471cac965e67d7d557229.jpg')] bg-cover bg-no-repeat group/super rounded-xl">

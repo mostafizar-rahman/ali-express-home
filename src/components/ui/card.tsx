@@ -52,17 +52,19 @@ const Card = ({ thumbnail }: { thumbnail: string }) => {
             </div>
           </Link>
           <div className="mt-2">
-            <Link to="#" className="line-clamp-1 text-sm ">Men Shoes Sneakers man casual Men's Shoes tenis Luxury shoes Trainer Race Breathable Shoes fashion running Shoes for women</Link>
-            <div className="flex items-center  mt-0.5">
-              <ul className="flex gap-0.5">
-                <li><Star fill="black" size={10} /></li>
-                <li><Star fill="black" size={10} /></li>
-                <li><Star fill="black" size={10} /></li>
-                <li><Star fill="black" size={10} /></li>
-                <li><Star fill="black" size={10} /></li>
-              </ul>
-              <span className="text-[#757575] text-xs ml-1.5">6 sold</span>
-              <img className="inline-block ml-2" src="https://ae01.alicdn.com/kf/S1070fe6ce9fd4b2bb6760161cf556f9ag/372x64.png" height="16" width="93"></img>
+            <Link to="#" className="line-clamp-1 text-sm">Men Shoes Sneakers man casual Men's Shoes tenis Luxury shoes Trainer Race Breathable Shoes fashion running Shoes for women</Link>
+            <div className="flex items-center justify-between mt-0.5">
+              <div className="flex items-center">
+                <ul className="flex gap-0.5">
+                  <li><Star fill="black" size={10} /></li>
+                  <li><Star fill="black" size={10} /></li>
+                  <li><Star fill="black" size={10} /></li>
+                  <li><Star fill="black" size={10} /></li>
+                  <li><Star fill="black" size={10} /></li>
+                </ul>
+                <span className="text-[#757575] text-xs ml-1.5">6 sold</span>
+              </div>
+              <img className="inline-block ml-2 h-4 w-14 object-contain" src="https://ae01.alicdn.com/kf/Sba3affa33fb2433f934852e5b2abaf25v/250x64.png" height="16" width="93"></img>
             </div>
             <div>
               <p className="font-bold inline-block">

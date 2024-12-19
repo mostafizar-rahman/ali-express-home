@@ -47,7 +47,7 @@ const contentArray = [
 const FooterCategory = () => {
     const [isExpend, setIsExpend] = useState(false)
     return (
-        <div className="container pb-4 pt-8">
+        <div className="container pb-4 mt-8">
             <div className={`text-[#666] text-xs text-center overflow-hidden flex items-start ${isExpend ? "h-auto" : "h-5"}`}>
                 <div>
                     {
