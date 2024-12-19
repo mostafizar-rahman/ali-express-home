@@ -44,8 +44,8 @@ const HomeCategory = () => {
                         {
                             homeCategoryData.map(({ categories, id }) => {
                                 return (
-                                    <SwiperSlide>
-                                        <div key={id} className="grid grid-cols-2 min-[1551px]:gap-6 gap-4">
+                                    <SwiperSlide key={id}>
+                                        <div  className="grid grid-cols-2 min-[1551px]:gap-6 gap-4">
                                             {
                                                 categories.map(({ id, image, title }) => {
                                                     return (

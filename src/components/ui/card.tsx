@@ -3,37 +3,47 @@ import { useRef } from "react"
 import { Link } from "react-router-dom"
 
 const Card = ({ thumbnail }: { thumbnail: string }) => {
-  const ref = useRef<HTMLDivElement | null>(null)
+  const ref = useRef<HTMLDivElement>(null)
+  const initialWidth = useRef<number>();
+
   const handleMouseHover = () => {
     if (ref.current) {
-      const childElement = ref.current.children[0];
-      if (childElement) {
-        console.log(ref.current.offsetWidth)
-        // childElement.style.maxWidth = `${ref.current.clientWidth}px`;
+      if (!initialWidth.current) {
+        initialWidth.current = ref.current.offsetWidth;
       }
 
-      // const newWidth = ref.current.clientWidth + 24;
-      // ref.current.style.width = `${newWidth}px`;
+      const childElement = ref.current.children[0] as HTMLElement;
+      if (childElement) {
+        childElement.style.maxWidth = `${initialWidth.current}px`;
 
+        const newWidth = initialWidth.current + 24; // Always calculate from initial width
+        ref.current.style.width = `${newWidth}px`;
+        ref.current.style.left = "-12px";
+      }
     }
-  }
+  };
+
   const handleMouseLeave = () => {
     if (ref.current) {
-      const childElement = ref.current.children[0];
+      const childElement = ref.current.children[0] as HTMLElement;
       if (childElement) {
-        // childElement.style.maxWidth = `100%`;
+        childElement.style.maxWidth = `100%`;
       }
 
-      // ref.current.style.width = `auto`;
+      ref.current.style.width = `auto`;
+      ref.current.style.left = "0px";
     }
-  }
+  };
+
+
 
   return (
-    <div ref={ref} className="relative rounded-2xl group">
+    <div className="relative rounded-2xl group">
       <div
+        ref={ref}
         onMouseEnter={handleMouseHover}
         onMouseLeave={handleMouseLeave}
-        className="h-[378px] group-hover:absolute  z-40 group-hover:h-auto group-hover:shadow-4xl group-hover:rounded-2xl py-4 bg-background">
+        className="group-hover:absolute z-40 group-hover:h-auto group-hover:shadow-4xl group-hover:rounded-2xl py-4 bg-background">
         <div className=" mx-auto">
           <Link to={"#"} className="relative">
             <img src={thumbnail} alt="img" className="rounded-2xl" />
