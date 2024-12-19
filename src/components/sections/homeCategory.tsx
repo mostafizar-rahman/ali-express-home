@@ -12,17 +12,17 @@ const HomeCategory = () => {
         <section className="container mt-8">
             <h2 className="text-center font-bold text-[32px]">Shop by category</h2>
             <div className="grid grid-cols-2 gap-[35px] mt-6">
-                <div className="bg-[#1B5F48] min-[1551px]:h-[687px] h-[536px] flex flex-col justify-between">
-                    <div className="mt-14 min-[1551px]:ml-12 ml-10">
+                <div className="bg-[#1B5F48] 3xl:h-[687px] h-[536px] flex flex-col justify-between">
+                    <div className="mt-14 3xl:ml-12 ml-10">
                         <div>
                             <img className="w-auto h-[41px]" src="https://ae01.alicdn.com/kf/S73f17457c7224ac9a7174dafc9bcbd44h.png" />
                         </div>
                         <p className="text-[rgb(255,255,255)] font-[450] mt-2.5 max-w-[292px]">Your fashion choice</p>
-                        <Button asChild size={"sm"} className="bg-background text-black rounded-none min-[1551px]:text-xl font-medium min-[1551px]:mt-6 mt-3">
+                        <Button asChild size={"sm"} className="bg-background text-black rounded-none 3xl:text-xl font-medium 3xl:mt-6 mt-3">
                             <Link to={"#"}>Shop now</Link>
                         </Button>
                     </div>
-                    <div className="min-[1551px]:mx-12 mx-10 grid grid-cols-3 gap-4 min-[1551px]:mb-10 mb-8">
+                    <div className="3xl:mx-12 mx-10 grid grid-cols-3 gap-4 3xl:mb-10 mb-8">
                         <ProductCard />
                         <ProductCard />
                         <ProductCard />
@@ -45,12 +45,12 @@ const HomeCategory = () => {
                             homeCategoryData.map(({ categories, id }) => {
                                 return (
                                     <SwiperSlide key={id}>
-                                        <div  className="grid grid-cols-2 min-[1551px]:gap-6 gap-4">
+                                        <div  className="grid grid-cols-2 3xl:gap-6 gap-4">
                                             {
                                                 categories.map(({ id, image, title }) => {
                                                     return (
-                                                        <Link key={id} to={"#"} className="block min-[1551px]:h-[213px] h-[168px] max-w-[384px] bg-cover" style={{ backgroundImage: `url(${image})` }}>
-                                                            <span className="p-6 font-semibold min-[1551px]:text-2xl text-xl max-w-[135px] block">{title}</span>
+                                                        <Link key={id} to={"#"} className="block 3xl:h-[213px] h-[168px] max-w-[384px] bg-cover" style={{ backgroundImage: `url(${image})` }}>
+                                                            <span className="p-6 font-semibold 3xl:text-2xl text-xl max-w-[135px] block">{title}</span>
                                                         </Link>
                                                     )
                                                 })
@@ -85,8 +85,8 @@ const ProductCard = () => {
                 </Link>
             </div>
             <div className="mt-3">
-                <p className="min-[1551px]:text-xl text-base font-bold inline-block">US $99.0</p>
-                <p className="min-[1551px]:text-base text-xs text-[#979797] inline-block ml-2">US $3.37</p>
+                <p className="3xl:text-xl text-base font-bold inline-block">US $99.0</p>
+                <p className="3xl:text-base text-xs text-[#979797] inline-block ml-2">US $3.37</p>
                 <div className="text-sm flex items-center mt-1.5">
                     <div className="inline-flex items-center gap-1">
                         <img src="https://ae01.alicdn.com/kf/S41f4d1d8fe7b4fe3a65c5450e45c4e9aT/14x14.png" alt="star" className="" />

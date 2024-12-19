@@ -112,8 +112,8 @@ const Card = ({ discountPercentage, price, thumbnail, title, discountPercentageS
       <div className="mt-3">
         <Link to={"#"} className="line-clamp-2 font-[450] leading-5">{title}</Link>
         <div className="mt-4">
-          <p className="font-bold min-[1551px]:text-xl inline-block leading-none mr-2">US ${price}</p>
-          <p className="line-through text-[#979797] inline-block leading-none min-[1551px]:text-base text-xs">US $37.29</p>
+          <p className="font-bold 3xl:text-xl inline-block leading-none mr-2">US ${price}</p>
+          <p className="line-through text-[#979797] inline-block leading-none 3xl:text-base text-xs">US $37.29</p>
         </div>
         {
           discountPercentageShow ?
