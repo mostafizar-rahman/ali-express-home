@@ -34,8 +34,8 @@ export default {
 					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: 'var(--secondary)',
+					foreground: 'var(--secondary-foreground)'
 				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
@@ -59,6 +59,86 @@ export default {
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
 				}
+			},
+			fontSize: {
+				xs: [
+					'0.75rem',
+					{
+						lineHeight: 'normal'
+					}
+				],
+				sm: [
+					'0.875rem',
+					{
+						lineHeight: 'normal'
+					}
+				],
+				base: [
+					'1rem',
+					{
+						lineHeight: 'normal'
+					}
+				],
+				lg: [
+					'1.125rem',
+					{
+						lineHeight: 'normal'
+					}
+				],
+				xl: [
+					'1.25rem',
+					{
+						lineHeight: 'normal'
+					}
+				],
+				'2xl': [
+					'1.5rem',
+					{
+						lineHeight: 'normal'
+					}
+				],
+				'3xl': [
+					'1.875rem',
+					{
+						lineHeight: 'normal'
+					}
+				],
+				'4xl': [
+					'2.25rem',
+					{
+						lineHeight: 'normal'
+					}
+				],
+				'5xl': [
+					'3rem',
+					{
+						lineHeight: 'normal'
+					}
+				],
+				'6xl': [
+					'3.75rem',
+					{
+						lineHeight: 'normal'
+					}
+				],
+				'7xl': [
+					'4.5rem',
+					{
+						lineHeight: 'normal'
+					}
+				],
+				'8xl': [
+					'6rem',
+					{
+						lineHeight: 'normal'
+					}
+				],
+				'9xl': [
+					'8rem',
+					{
+						lineHeight: 'normal'
+					}
+				]
 			},
 			boxShadow: {
 				'4xl': 'rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px'

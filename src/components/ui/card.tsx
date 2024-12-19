@@ -1,12 +1,19 @@
 import { ShoppingCartIcon, Star } from "lucide-react"
-import { useRef } from "react"
+import { MouseEvent, useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
+import ProductQuickView from "../sections/productQuickView"
+import SimilarItemPopup from "../sections/similarItemPopup"
+import { Button } from "./button"
 
 const Card = ({ thumbnail }: { thumbnail: string }) => {
   const ref = useRef<HTMLDivElement>(null)
   const initialWidth = useRef<number>();
+  const [isPreviewDialogOpen, setIsPreviewDialogOpen] = useState(false);
+  const [isSimilarDialogOpen, setIsSimilarDialogOpen] = useState(false);
 
-  const handleMouseHover = () => {
+  const handleMouseHover = (e: MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation()
+
     if (ref.current) {
       if (!initialWidth.current) {
         initialWidth.current = ref.current.offsetWidth;
@@ -23,8 +30,9 @@ const Card = ({ thumbnail }: { thumbnail: string }) => {
     }
   };
 
+
   const handleMouseLeave = () => {
-    if (ref.current) {
+    if ((!isPreviewDialogOpen || !isSimilarDialogOpen) && ref.current) {
       const childElement = ref.current.children[0] as HTMLElement;
       if (childElement) {
         childElement.style.maxWidth = `100%`;
@@ -35,6 +43,9 @@ const Card = ({ thumbnail }: { thumbnail: string }) => {
     }
   };
 
+  useEffect(() => {
+    handleMouseLeave()
+  }, [isSimilarDialogOpen, isPreviewDialogOpen])
 
 
   return (
@@ -76,8 +87,22 @@ const Card = ({ thumbnail }: { thumbnail: string }) => {
             </div>
             <p className="text-sm mt-2 text-[rgb(25,25,25)]">Free shipping</p>
             <div className="mt-2.5 hidden group-hover:flex min-[1552px]:flex-row flex-col justify-between items-center gap-2 bg-background">
-              <a href="#" className="bg-[#191919] inline-flex justify-center items-center text-white font-bold text-xs rounded-3xl h-9 w-full px-5">See preview</a>
-              <a href="#" className="bg-[#191919] inline-flex justify-center items-center text-white font-bold text-xs rounded-3xl h-9 w-full px-5">Similar items</a>
+              <Button
+                onClick={() => setIsPreviewDialogOpen(true)}
+                variant={"secondary"}
+                className="font-bold text-xs rounded-3xl h-9 w-full px-5 hover:opacity-90"
+              >
+                See preview
+              </Button>
+              <Button
+                onClick={() => setIsSimilarDialogOpen(true)}
+                variant={"secondary"}
+                className="font-bold text-xs rounded-3xl h-9 w-full px-5 hover:opacity-90"
+              >
+                Similar items
+              </Button>
+              <ProductQuickView isDialogOpen={isPreviewDialogOpen} setIsDialogOpen={setIsPreviewDialogOpen} />
+              <SimilarItemPopup isDialogOpen={isSimilarDialogOpen} setIsDialogOpen={setIsSimilarDialogOpen} />
             </div>
           </div>
         </div>
